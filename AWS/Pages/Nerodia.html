@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nerodia Console</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Optional: Makes the page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+</head>
+    <body>
+
+        <h1>Nerodia Console</h1>
+
+        <h2>{message}</h2>
+
+        <div id="status"><h3>Last Valve Status: {status} (Received at {status_timestamp})</h3></div>
+
+        <br>
+
+        <!-- Change State -->
+        <form action="webapp" method="post">
+          <input type="hidden" id="token" name="token" value="nerodiapw">
+          <input type="hidden" id="desired_state" name="desired_state" value="{different_state}">
+          <button type="submit">Set desired state to {different_state}</button>
+        </form>
+
+        <br><br>
+
+        <!-- Historical Information -->
+        <div>
+          <img src="data:image/png;base64, {historical_base64}" alt="Red dot" />
+        </div>
+
+
+    </body>
+</html>

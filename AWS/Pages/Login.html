@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nerodia Console</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script>
+        function show_password(){
+            var password = document.getElementById("password")
+            if (password.type === "password"){
+                password.type = "text"
+            } else {
+                password.type = "password"
+            }
+        }
+    </script>
+</head>
+
+<br><br><h1>Welcome to Nerodia</h1><br><br>
+
+<br><br>{message}<br><br>
+
+
+<form action="webapp" method="post">
+  Password: <input type="password" name="password" id="password" autocomplete="on"><br>
+  <button type="submit">Submit</button>
+</form>
+
+<input type="checkbox" onclick="show_password()">Show Password
+</form>
+
+</body>
+</html>

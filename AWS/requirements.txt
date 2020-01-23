@@ -1,0 +1,4 @@
+LambdaPage
+requests
+bs4
+matplotlib
