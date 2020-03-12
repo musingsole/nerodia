@@ -1,5 +1,4 @@
 from machine import Pin, reset
-import json
 from urequests import post
 from time import sleep
 
@@ -20,7 +19,7 @@ class Nerodia:
         self.m2_pin(0)
         self.state = None
         self.close()
-        self.url = "https://6iexflymkg.execute-api.us-east-1.amazonaws.com/prod/heartbeat"
+        self.url = "https://musingsole.com/nerodia/heartbeat"
 
     def open(self):
         self.state = "OPEN"

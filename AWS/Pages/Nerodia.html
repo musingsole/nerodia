@@ -4,6 +4,7 @@
     <title>Nerodia Console</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
+    <meta http-equiv="refresh" content="30">
     <style>
       /* Optional: Makes the page fill the window. */
       html, body {
@@ -12,19 +13,29 @@
         padding: 0;
       }
     </style>
+    <script>
+      function timer_refresh(){
+        // Form Submitting after 20 seconds.
+        var auto_refresh = setInterval(function() { submitform(); }, 20000);
+        // Form submit function.
+        function submitform(){alert('Form is submitting.....');
+          document.getElementById("submit_state").submit();
+      }
+    </script>
 </head>
-    <body>
+    <body onload="timer_refresh()">
 
         <h1>Nerodia Console</h1>
 
         <h2>{message}</h2>
 
         <div id="status"><h3>Last Valve Status: {status} (Received at {status_timestamp})</h3></div>
+        <div id="planned_action"><h4>Next Action: {planned_action}</h4></div>
 
         <br>
 
         <!-- Change State -->
-        <form action="webapp" method="post">
+        <form id="submit_state" action="webapp" method="post">
           <input type="hidden" id="token" name="token" value="nerodiapw">
           <input type="hidden" id="desired_state" name="desired_state" value="{different_state}">
           <button type="submit">Set desired state to {different_state}</button>
