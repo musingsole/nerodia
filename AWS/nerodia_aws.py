@@ -87,8 +87,8 @@ def nerodia_console(message=""):
 
     different_state = 'CLOSED' if desired_state == 'OPEN' else 'OPEN'
     heartbeat_timestamp = last_hearbeat['COL']
-    planned_action = status_to_action(different_state) \
-        if status is not different_state \
+    planned_action = status_to_action(desired_state) \
+        if status is not desired_state \
         else None
     print("Recent status: {}".format(heartbeat_timestamp))
 
